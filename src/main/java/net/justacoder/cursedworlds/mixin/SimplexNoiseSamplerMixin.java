@@ -19,7 +19,7 @@ public abstract class SimplexNoiseSamplerMixin {
         cir.setReturnValue(ModifiedNoiseFunctions.dot(gradient, x, y, z));
     }
     @Inject(method = "grad", at = @At("HEAD"), cancellable = true)
-    private static void modifyGrad(int hash, double x, double y, double z, double distance, CallbackInfoReturnable<Double> cir) {
+    private void modifyGrad(int hash, double x, double y, double z, double distance, CallbackInfoReturnable<Double> cir) {
         cir.setReturnValue(ModifiedNoiseFunctions.grad(hash, x, y, z, distance, GRADIENTS));
     }
 
