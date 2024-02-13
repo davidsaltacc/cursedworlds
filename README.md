@@ -3,4 +3,4 @@
 </p>
 
 # Cursed Worlds
-breaking world generation horrendously
+breaking minecraft world generation horrendously
