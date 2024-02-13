@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "cursedworlds",
+	"version": "${version}",
+	"name": "Cursed Worlds",
+	"description": "breaking world generation horrendously",
+	"authors": [
+		"discord/@justacoder",
+		"discord/@beepboop.py"
+	],
+	"license": "MIT",
+	"icon": "assets/cursedworlds/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+            "net.justacoder.cursedworlds.CWMain"
+		]
+	},
+	"mixins": [
+		"cursedworlds.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.4",
+		"java": ">=17"
+	},
+	"accessWidener": "cursedworlds.accesswidener"
+}
