@@ -12,15 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SimplexNoiseSampler.class)
 public abstract class SimplexNoiseSamplerMixin {
 
-    @Shadow @Final protected static int[][] GRADIENTS;
-
     @Inject(method = "dot", at = @At("HEAD"), cancellable = true)
     private static void modifyDot(int[] gradient, double x, double y, double z, CallbackInfoReturnable<Double> cir) {
         cir.setReturnValue(ModifiedNoiseFunctions.dot(gradient, x, y, z));
-    }
-    @Inject(method = "grad", at = @At("HEAD"), cancellable = true)
-    private void modifyGrad(int hash, double x, double y, double z, double distance, CallbackInfoReturnable<Double> cir) {
-        cir.setReturnValue(ModifiedNoiseFunctions.grad(hash, x, y, z, distance, GRADIENTS));
     }
 
 }

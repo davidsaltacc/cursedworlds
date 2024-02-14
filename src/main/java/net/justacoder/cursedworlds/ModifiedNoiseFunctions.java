@@ -1,7 +1,8 @@
 package net.justacoder.cursedworlds;
 
-public abstract class ModifiedNoiseFunctions { // mess with anything in this class.
+import net.minecraft.util.math.random.Random;
 
+public abstract class ModifiedNoiseFunctions { // mess with anything in this class.
 
     public static double lerp(double delta, double start, double end) {
 
@@ -24,6 +25,12 @@ public abstract class ModifiedNoiseFunctions { // mess with anything in this cla
             }
         } else if (type == 6) {
             return end + delta * (start - end);
+        } else if (type == 7) {
+            return start;
+        } else if (type == 8) {
+            return delta * delta + delta;
+        } else if (type == 9) {
+            return end - start * 2.0 - delta / 2.0 * (end + 0.1 * start - start) / 2.0;
         }
         return start + delta * (end - start);
     }
@@ -50,18 +57,5 @@ public abstract class ModifiedNoiseFunctions { // mess with anything in this cla
 
     public static double dot(int[] gradient, double x, double y, double z) {
         return (double) gradient[0] * x + (double) gradient[1] * y + (double) gradient[2] * z;
-    }
-
-
-    public static double grad(int hash, double x, double y, double z, double distance, int[][] GRADIENTS) {
-        double e;
-        double d = distance - x * x - y * y - z * z;
-        if (d < 0.0) {
-            e = 0.0;
-        } else {
-            d *= d;
-            e = d * d * dot(GRADIENTS[hash], x, y, z);
-        }
-        return e;
     }
 }

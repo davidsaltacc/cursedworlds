@@ -25,6 +25,10 @@ public class CWMain implements ModInitializer {
 		addWorld(4, "Broken Amplified");
 		addWorld(5, "Bumpy/Spiky");
 		addWorld(6, "Spiky/Cliffs");
+		addWorld(7, "Holes/Spiky");
+		addWorld(8, "Mangrove Stripes");
+		addWorld(8, "Mangrove Stripes");
+		addWorld(9, "Mountains/Walls");
 	}
 
 	public static int worldType = 0;
