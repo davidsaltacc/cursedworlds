@@ -27,7 +27,6 @@ public class CWMain implements ModInitializer {
 		addWorld(6, "Spiky/Cliffs");
 		addWorld(7, "Holes/Spiky");
 		addWorld(8, "Mangrove Stripes");
-		addWorld(8, "Mangrove Stripes");
 		addWorld(9, "Mountains/Walls");
 	}
 
