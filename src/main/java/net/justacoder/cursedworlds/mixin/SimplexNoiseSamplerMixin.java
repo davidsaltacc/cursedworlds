@@ -1,6 +1,6 @@
 package net.justacoder.cursedworlds.mixin;
 
-import net.justacoder.cursedworlds.ModifiedNoiseFunctions;
+import net.justacoder.cursedworlds.CWModifiedNoiseFunctions;
 import net.minecraft.util.math.noise.SimplexNoiseSampler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,7 +12,7 @@ public abstract class SimplexNoiseSamplerMixin {
 
     @Inject(method = "dot", at = @At("HEAD"), cancellable = true)
     private static void modifyDot(int[] gradient, double x, double y, double z, CallbackInfoReturnable<Double> cir) {
-        cir.setReturnValue(ModifiedNoiseFunctions.dot(gradient, x, y, z));
+        cir.setReturnValue(CWModifiedNoiseFunctions.dot(gradient, x, y, z));
     }
 
 }

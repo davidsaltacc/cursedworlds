@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class CWMain implements ModInitializer {
 
-    public static final GameRules.Key<GameRules.IntRule> CURSEDWORLD_ID_GAMERULE = GameRuleRegistry.register("cursedWorldTypeId", GameRules.Category.MOBS, GameRuleFactory.createIntRule(0));
+    public static final GameRules.Key<GameRules.IntRule> CURSEDWORLD_ID_GAMERULE = GameRuleRegistry.register("cursedWorldTypeId", GameRules.Category.MISC, GameRuleFactory.createIntRule(0));
 
 	public static final Map<Integer, String> WORLDS = new HashMap<>();
 	public static void addWorld(Integer id, String name) {
@@ -28,6 +28,8 @@ public class CWMain implements ModInitializer {
 		addWorld(7, "Holes/Spiky");
 		addWorld(8, "Mangrove Stripes");
 		addWorld(9, "Mountains/Walls");
+		addWorld(10, "Brutalist Stone Architecture");
+		addWorld(11, "Islands/Shrooms");
 	}
 
 	public static int worldType = 0;

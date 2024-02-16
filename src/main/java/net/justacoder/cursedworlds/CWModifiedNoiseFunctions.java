@@ -1,8 +1,9 @@
 package net.justacoder.cursedworlds;
 
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 
-public abstract class ModifiedNoiseFunctions { // mess with anything in this class.
+public abstract class CWModifiedNoiseFunctions { // mess with anything in this class.
 
     public static double lerp(double delta, double start, double end) {
 
@@ -31,6 +32,10 @@ public abstract class ModifiedNoiseFunctions { // mess with anything in this cla
             return delta * delta + delta;
         } else if (type == 9) {
             return end - start * 2.0 - delta / 2.0 * (end + 0.1 * start - start) / 2.0;
+        } else if (type == 10) {
+            return MathHelper.clamp(MathHelper.nextBetween(Random.create(), (int) Math.min(start * 2, end * 2), (int) Math.max(start * 2, end * 2)) * (delta + 1.5), 0, 191);
+        } else if (type == 11) {
+            return start + (MathHelper.sin((float) delta + 0.3f) / MathHelper.cos((float) delta + 0.3f)) * (end - start);
         }
         return start + delta * (end - start);
     }

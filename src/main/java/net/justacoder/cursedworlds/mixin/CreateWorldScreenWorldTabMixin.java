@@ -26,7 +26,7 @@ public abstract class CreateWorldScreenWorldTabMixin extends GridScreenTab {
             return Text.of(Objects.requireNonNullElse(n, "None"));
 
         }).values(CyclingButtonWidget.Values.of(CWMain.WORLDS.keySet())).build(0, 0, 310, 20, Text.of("Cursed World Type"), (b, t) -> createWorldScreen.getWorldCreator().getGameRules().get(CWMain.CURSEDWORLD_ID_GAMERULE).set(t, null));
-        grid.add(cyclingButtonWidget, 6, 0);
+        grid.add(cyclingButtonWidget, 6, 0, 1, 2);
     }
 
 }
